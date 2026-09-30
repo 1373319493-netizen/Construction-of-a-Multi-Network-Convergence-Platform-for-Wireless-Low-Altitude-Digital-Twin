@@ -1,0 +1,533 @@
+<scene version="2.1.0">
+
+<!-- Defaults, these can be set via the command line: -Darg=value -->
+
+
+<!-- Camera and Rendering Parameters -->
+
+	<integrator type="path" id="elm__0" name="elm__0">
+		<integer name="max_depth" value="12"/>
+	</integrator>
+
+<!-- Materials -->
+
+	<bsdf type="diffuse" id="mat-itu_concrete" name="mat-itu_concrete">
+		<rgb value="0.500000 0.500000 0.500000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-itu_glass" name="mat-itu_glass">
+		<rgb value="0.600000 0.800000 1.000000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-itu_marble" name="mat-itu_marble">
+		<rgb value="0.900000 0.900000 0.900000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-itu_brick" name="mat-itu_brick">
+		<rgb value="0.800000 0.300000 0.200000" name="reflectance"/>
+	</bsdf>
+
+<!-- Emitters -->
+
+
+<!-- Shapes -->
+
+	<shape type="ply" id="mesh-plane" name="mesh-plane">
+		<string name="filename" value="meshes/plane.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09-itu_glass" name="mesh-Building_09-itu_glass">
+		<string name="filename" value="meshes/Building_09-itu_glass.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09-itu_glass-001" name="mesh-Building_09-itu_glass-001">
+		<string name="filename" value="meshes/Building_09-itu_glass-001.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09-itu_marble" name="mesh-Building_09-itu_marble">
+		<string name="filename" value="meshes/Building_09-itu_marble.ply"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09-itu_brick" name="mesh-Building_09-itu_brick">
+		<string name="filename" value="meshes/Building_09-itu_brick.ply"/>
+		<ref id="mat-itu_brick" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09-itu_concrete" name="mesh-Building_09-itu_concrete">
+		<string name="filename" value="meshes/Building_09-itu_concrete.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09-itu_concrete-001" name="mesh-Building_09-itu_concrete-001">
+		<string name="filename" value="meshes/Building_09-itu_concrete-001.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-windows" name="mesh-windows">
+		<string name="filename" value="meshes/windows.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_001-itu_glass" name="mesh-Building_09_001-itu_glass">
+		<string name="filename" value="meshes/Building_09_001-itu_glass.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_001-itu_glass-001" name="mesh-Building_09_001-itu_glass-001">
+		<string name="filename" value="meshes/Building_09_001-itu_glass-001.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_001-itu_marble" name="mesh-Building_09_001-itu_marble">
+		<string name="filename" value="meshes/Building_09_001-itu_marble.ply"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_001-itu_brick" name="mesh-Building_09_001-itu_brick">
+		<string name="filename" value="meshes/Building_09_001-itu_brick.ply"/>
+		<ref id="mat-itu_brick" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_001-itu_concrete" name="mesh-Building_09_001-itu_concrete">
+		<string name="filename" value="meshes/Building_09_001-itu_concrete.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_001-itu_concrete-001" name="mesh-Building_09_001-itu_concrete-001">
+		<string name="filename" value="meshes/Building_09_001-itu_concrete-001.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-windows_001" name="mesh-windows_001">
+		<string name="filename" value="meshes/windows_001.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_002-itu_glass" name="mesh-Building_09_002-itu_glass">
+		<string name="filename" value="meshes/Building_09_002-itu_glass.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_002-itu_glass-001" name="mesh-Building_09_002-itu_glass-001">
+		<string name="filename" value="meshes/Building_09_002-itu_glass-001.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_002-itu_marble" name="mesh-Building_09_002-itu_marble">
+		<string name="filename" value="meshes/Building_09_002-itu_marble.ply"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_002-itu_brick" name="mesh-Building_09_002-itu_brick">
+		<string name="filename" value="meshes/Building_09_002-itu_brick.ply"/>
+		<ref id="mat-itu_brick" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_002-itu_concrete" name="mesh-Building_09_002-itu_concrete">
+		<string name="filename" value="meshes/Building_09_002-itu_concrete.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_002-itu_concrete-001" name="mesh-Building_09_002-itu_concrete-001">
+		<string name="filename" value="meshes/Building_09_002-itu_concrete-001.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-windows_002" name="mesh-windows_002">
+		<string name="filename" value="meshes/windows_002.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_003-itu_glass" name="mesh-Building_09_003-itu_glass">
+		<string name="filename" value="meshes/Building_09_003-itu_glass.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_003-itu_glass-001" name="mesh-Building_09_003-itu_glass-001">
+		<string name="filename" value="meshes/Building_09_003-itu_glass-001.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_003-itu_marble" name="mesh-Building_09_003-itu_marble">
+		<string name="filename" value="meshes/Building_09_003-itu_marble.ply"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_003-itu_brick" name="mesh-Building_09_003-itu_brick">
+		<string name="filename" value="meshes/Building_09_003-itu_brick.ply"/>
+		<ref id="mat-itu_brick" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_003-itu_concrete" name="mesh-Building_09_003-itu_concrete">
+		<string name="filename" value="meshes/Building_09_003-itu_concrete.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_003-itu_concrete-001" name="mesh-Building_09_003-itu_concrete-001">
+		<string name="filename" value="meshes/Building_09_003-itu_concrete-001.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-windows_003" name="mesh-windows_003">
+		<string name="filename" value="meshes/windows_003.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_004-itu_glass" name="mesh-Building_09_004-itu_glass">
+		<string name="filename" value="meshes/Building_09_004-itu_glass.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_004-itu_glass-001" name="mesh-Building_09_004-itu_glass-001">
+		<string name="filename" value="meshes/Building_09_004-itu_glass-001.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_004-itu_marble" name="mesh-Building_09_004-itu_marble">
+		<string name="filename" value="meshes/Building_09_004-itu_marble.ply"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_004-itu_brick" name="mesh-Building_09_004-itu_brick">
+		<string name="filename" value="meshes/Building_09_004-itu_brick.ply"/>
+		<ref id="mat-itu_brick" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_004-itu_concrete" name="mesh-Building_09_004-itu_concrete">
+		<string name="filename" value="meshes/Building_09_004-itu_concrete.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_004-itu_concrete-001" name="mesh-Building_09_004-itu_concrete-001">
+		<string name="filename" value="meshes/Building_09_004-itu_concrete-001.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-windows_004" name="mesh-windows_004">
+		<string name="filename" value="meshes/windows_004.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_005-itu_glass" name="mesh-Building_09_005-itu_glass">
+		<string name="filename" value="meshes/Building_09_005-itu_glass.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_005-itu_glass-001" name="mesh-Building_09_005-itu_glass-001">
+		<string name="filename" value="meshes/Building_09_005-itu_glass-001.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_005-itu_marble" name="mesh-Building_09_005-itu_marble">
+		<string name="filename" value="meshes/Building_09_005-itu_marble.ply"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_005-itu_brick" name="mesh-Building_09_005-itu_brick">
+		<string name="filename" value="meshes/Building_09_005-itu_brick.ply"/>
+		<ref id="mat-itu_brick" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_005-itu_concrete" name="mesh-Building_09_005-itu_concrete">
+		<string name="filename" value="meshes/Building_09_005-itu_concrete.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_005-itu_concrete-001" name="mesh-Building_09_005-itu_concrete-001">
+		<string name="filename" value="meshes/Building_09_005-itu_concrete-001.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-windows_005" name="mesh-windows_005">
+		<string name="filename" value="meshes/windows_005.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_006-itu_glass" name="mesh-Building_09_006-itu_glass">
+		<string name="filename" value="meshes/Building_09_006-itu_glass.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_006-itu_glass-001" name="mesh-Building_09_006-itu_glass-001">
+		<string name="filename" value="meshes/Building_09_006-itu_glass-001.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_006-itu_marble" name="mesh-Building_09_006-itu_marble">
+		<string name="filename" value="meshes/Building_09_006-itu_marble.ply"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_006-itu_brick" name="mesh-Building_09_006-itu_brick">
+		<string name="filename" value="meshes/Building_09_006-itu_brick.ply"/>
+		<ref id="mat-itu_brick" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_006-itu_concrete" name="mesh-Building_09_006-itu_concrete">
+		<string name="filename" value="meshes/Building_09_006-itu_concrete.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_006-itu_concrete-001" name="mesh-Building_09_006-itu_concrete-001">
+		<string name="filename" value="meshes/Building_09_006-itu_concrete-001.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-windows_006" name="mesh-windows_006">
+		<string name="filename" value="meshes/windows_006.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_007-itu_glass" name="mesh-Building_09_007-itu_glass">
+		<string name="filename" value="meshes/Building_09_007-itu_glass.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_007-itu_glass-001" name="mesh-Building_09_007-itu_glass-001">
+		<string name="filename" value="meshes/Building_09_007-itu_glass-001.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_007-itu_marble" name="mesh-Building_09_007-itu_marble">
+		<string name="filename" value="meshes/Building_09_007-itu_marble.ply"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_007-itu_brick" name="mesh-Building_09_007-itu_brick">
+		<string name="filename" value="meshes/Building_09_007-itu_brick.ply"/>
+		<ref id="mat-itu_brick" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_007-itu_concrete" name="mesh-Building_09_007-itu_concrete">
+		<string name="filename" value="meshes/Building_09_007-itu_concrete.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_007-itu_concrete-001" name="mesh-Building_09_007-itu_concrete-001">
+		<string name="filename" value="meshes/Building_09_007-itu_concrete-001.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-windows_007" name="mesh-windows_007">
+		<string name="filename" value="meshes/windows_007.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_008-itu_glass" name="mesh-Building_09_008-itu_glass">
+		<string name="filename" value="meshes/Building_09_008-itu_glass.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_008-itu_glass-001" name="mesh-Building_09_008-itu_glass-001">
+		<string name="filename" value="meshes/Building_09_008-itu_glass-001.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_008-itu_marble" name="mesh-Building_09_008-itu_marble">
+		<string name="filename" value="meshes/Building_09_008-itu_marble.ply"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_008-itu_brick" name="mesh-Building_09_008-itu_brick">
+		<string name="filename" value="meshes/Building_09_008-itu_brick.ply"/>
+		<ref id="mat-itu_brick" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_008-itu_concrete" name="mesh-Building_09_008-itu_concrete">
+		<string name="filename" value="meshes/Building_09_008-itu_concrete.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_008-itu_concrete-001" name="mesh-Building_09_008-itu_concrete-001">
+		<string name="filename" value="meshes/Building_09_008-itu_concrete-001.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-windows_008" name="mesh-windows_008">
+		<string name="filename" value="meshes/windows_008.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_009-itu_glass" name="mesh-Building_09_009-itu_glass">
+		<string name="filename" value="meshes/Building_09_009-itu_glass.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_009-itu_glass-001" name="mesh-Building_09_009-itu_glass-001">
+		<string name="filename" value="meshes/Building_09_009-itu_glass-001.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_009-itu_marble" name="mesh-Building_09_009-itu_marble">
+		<string name="filename" value="meshes/Building_09_009-itu_marble.ply"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_009-itu_brick" name="mesh-Building_09_009-itu_brick">
+		<string name="filename" value="meshes/Building_09_009-itu_brick.ply"/>
+		<ref id="mat-itu_brick" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_009-itu_concrete" name="mesh-Building_09_009-itu_concrete">
+		<string name="filename" value="meshes/Building_09_009-itu_concrete.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_009-itu_concrete-001" name="mesh-Building_09_009-itu_concrete-001">
+		<string name="filename" value="meshes/Building_09_009-itu_concrete-001.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-windows_009" name="mesh-windows_009">
+		<string name="filename" value="meshes/windows_009.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_010-itu_glass" name="mesh-Building_09_010-itu_glass">
+		<string name="filename" value="meshes/Building_09_010-itu_glass.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_010-itu_glass-001" name="mesh-Building_09_010-itu_glass-001">
+		<string name="filename" value="meshes/Building_09_010-itu_glass-001.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_010-itu_marble" name="mesh-Building_09_010-itu_marble">
+		<string name="filename" value="meshes/Building_09_010-itu_marble.ply"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_010-itu_brick" name="mesh-Building_09_010-itu_brick">
+		<string name="filename" value="meshes/Building_09_010-itu_brick.ply"/>
+		<ref id="mat-itu_brick" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_010-itu_concrete" name="mesh-Building_09_010-itu_concrete">
+		<string name="filename" value="meshes/Building_09_010-itu_concrete.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_010-itu_concrete-001" name="mesh-Building_09_010-itu_concrete-001">
+		<string name="filename" value="meshes/Building_09_010-itu_concrete-001.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-windows_010" name="mesh-windows_010">
+		<string name="filename" value="meshes/windows_010.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_011-itu_glass" name="mesh-Building_09_011-itu_glass">
+		<string name="filename" value="meshes/Building_09_011-itu_glass.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_011-itu_glass-001" name="mesh-Building_09_011-itu_glass-001">
+		<string name="filename" value="meshes/Building_09_011-itu_glass-001.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_011-itu_marble" name="mesh-Building_09_011-itu_marble">
+		<string name="filename" value="meshes/Building_09_011-itu_marble.ply"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_011-itu_brick" name="mesh-Building_09_011-itu_brick">
+		<string name="filename" value="meshes/Building_09_011-itu_brick.ply"/>
+		<ref id="mat-itu_brick" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_011-itu_concrete" name="mesh-Building_09_011-itu_concrete">
+		<string name="filename" value="meshes/Building_09_011-itu_concrete.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_011-itu_concrete-001" name="mesh-Building_09_011-itu_concrete-001">
+		<string name="filename" value="meshes/Building_09_011-itu_concrete-001.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-windows_011" name="mesh-windows_011">
+		<string name="filename" value="meshes/windows_011.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_012-itu_glass" name="mesh-Building_09_012-itu_glass">
+		<string name="filename" value="meshes/Building_09_012-itu_glass.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_012-itu_glass-001" name="mesh-Building_09_012-itu_glass-001">
+		<string name="filename" value="meshes/Building_09_012-itu_glass-001.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_012-itu_marble" name="mesh-Building_09_012-itu_marble">
+		<string name="filename" value="meshes/Building_09_012-itu_marble.ply"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_012-itu_brick" name="mesh-Building_09_012-itu_brick">
+		<string name="filename" value="meshes/Building_09_012-itu_brick.ply"/>
+		<ref id="mat-itu_brick" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_012-itu_concrete" name="mesh-Building_09_012-itu_concrete">
+		<string name="filename" value="meshes/Building_09_012-itu_concrete.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_012-itu_concrete-001" name="mesh-Building_09_012-itu_concrete-001">
+		<string name="filename" value="meshes/Building_09_012-itu_concrete-001.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-windows_012" name="mesh-windows_012">
+		<string name="filename" value="meshes/windows_012.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_013-itu_glass" name="mesh-Building_09_013-itu_glass">
+		<string name="filename" value="meshes/Building_09_013-itu_glass.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_013-itu_glass-001" name="mesh-Building_09_013-itu_glass-001">
+		<string name="filename" value="meshes/Building_09_013-itu_glass-001.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_013-itu_marble" name="mesh-Building_09_013-itu_marble">
+		<string name="filename" value="meshes/Building_09_013-itu_marble.ply"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_013-itu_brick" name="mesh-Building_09_013-itu_brick">
+		<string name="filename" value="meshes/Building_09_013-itu_brick.ply"/>
+		<ref id="mat-itu_brick" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_013-itu_concrete" name="mesh-Building_09_013-itu_concrete">
+		<string name="filename" value="meshes/Building_09_013-itu_concrete.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_013-itu_concrete-001" name="mesh-Building_09_013-itu_concrete-001">
+		<string name="filename" value="meshes/Building_09_013-itu_concrete-001.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-windows_013" name="mesh-windows_013">
+		<string name="filename" value="meshes/windows_013.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_014-itu_glass" name="mesh-Building_09_014-itu_glass">
+		<string name="filename" value="meshes/Building_09_014-itu_glass.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_014-itu_glass-001" name="mesh-Building_09_014-itu_glass-001">
+		<string name="filename" value="meshes/Building_09_014-itu_glass-001.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_014-itu_marble" name="mesh-Building_09_014-itu_marble">
+		<string name="filename" value="meshes/Building_09_014-itu_marble.ply"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_014-itu_brick" name="mesh-Building_09_014-itu_brick">
+		<string name="filename" value="meshes/Building_09_014-itu_brick.ply"/>
+		<ref id="mat-itu_brick" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_014-itu_concrete" name="mesh-Building_09_014-itu_concrete">
+		<string name="filename" value="meshes/Building_09_014-itu_concrete.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_014-itu_concrete-001" name="mesh-Building_09_014-itu_concrete-001">
+		<string name="filename" value="meshes/Building_09_014-itu_concrete-001.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-windows_014" name="mesh-windows_014">
+		<string name="filename" value="meshes/windows_014.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_015-itu_glass" name="mesh-Building_09_015-itu_glass">
+		<string name="filename" value="meshes/Building_09_015-itu_glass.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_015-itu_glass-001" name="mesh-Building_09_015-itu_glass-001">
+		<string name="filename" value="meshes/Building_09_015-itu_glass-001.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_015-itu_marble" name="mesh-Building_09_015-itu_marble">
+		<string name="filename" value="meshes/Building_09_015-itu_marble.ply"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_015-itu_brick" name="mesh-Building_09_015-itu_brick">
+		<string name="filename" value="meshes/Building_09_015-itu_brick.ply"/>
+		<ref id="mat-itu_brick" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_015-itu_concrete" name="mesh-Building_09_015-itu_concrete">
+		<string name="filename" value="meshes/Building_09_015-itu_concrete.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_015-itu_concrete-001" name="mesh-Building_09_015-itu_concrete-001">
+		<string name="filename" value="meshes/Building_09_015-itu_concrete-001.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-windows_015" name="mesh-windows_015">
+		<string name="filename" value="meshes/windows_015.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_016-itu_glass" name="mesh-Building_09_016-itu_glass">
+		<string name="filename" value="meshes/Building_09_016-itu_glass.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_016-itu_glass-001" name="mesh-Building_09_016-itu_glass-001">
+		<string name="filename" value="meshes/Building_09_016-itu_glass-001.ply"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_016-itu_marble" name="mesh-Building_09_016-itu_marble">
+		<string name="filename" value="meshes/Building_09_016-itu_marble.ply"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_016-itu_brick" name="mesh-Building_09_016-itu_brick">
+		<string name="filename" value="meshes/Building_09_016-itu_brick.ply"/>
+		<ref id="mat-itu_brick" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_016-itu_concrete" name="mesh-Building_09_016-itu_concrete">
+		<string name="filename" value="meshes/Building_09_016-itu_concrete.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Building_09_016-itu_concrete-001" name="mesh-Building_09_016-itu_concrete-001">
+		<string name="filename" value="meshes/Building_09_016-itu_concrete-001.ply"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-windows_016" name="mesh-windows_016">
+		<string name="filename" value="meshes/windows_016.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_glass" name="bsdf"/>
+	</shape>
+
+<!-- Volumes -->
+
+</scene>

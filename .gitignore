@@ -1,0 +1,25 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Local editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Waf cache and VM completion marker
+.waf3-*/
+/vm_exchange/output/DONE
+
+# Keep CSV experiment data and .obj scene models tracked.

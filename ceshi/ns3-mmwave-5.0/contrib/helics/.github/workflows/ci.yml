@@ -1,0 +1,42 @@
+name: CI
+
+on: [push, pull_request, workflow_dispatch]
+
+env:
+  MACOSX_DEPLOYMENT_TARGET: 13
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      # Install dependencies, then install HELICS from source
+      - name: Install dependencies (Linux)
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libzmq5-dev libboost-dev
+      - name: Install dependencies (macOS)
+        if: runner.os == 'macOS'
+        run: brew install zeromq boost
+      - uses: gmlc-tdc/helics-action/install@main
+        with:
+          version: 'v3'
+          build_from_source: 'true'
+
+      # Clone ns-3 and checkout this repository to the contrib subfolder
+      - name: Clone latest ns-3
+        run: |
+          git clone --depth=1 -b ns-3.35 https://gitlab.com/nsnam/ns-3-dev.git .
+      - uses: actions/checkout@v4
+        with:
+          path: contrib/helics
+
+      - name: Configure ns-3
+        run: |
+          ./waf configure --disable-werror --with-helics=/usr/local --enable-modules=helics --enable-examples --enable-tests | tee gha_waf_configure.log
+          ! grep -Fq "HELICS not enabled" gha_waf_configure.log
+      
+      - name: Build ns-3
+        run: ./waf build
+

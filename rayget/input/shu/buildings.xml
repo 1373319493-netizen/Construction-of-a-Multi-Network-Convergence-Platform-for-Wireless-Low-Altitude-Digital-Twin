@@ -1,0 +1,194 @@
+<scene version="2.1.0">
+
+<!-- Defaults, these can be set via the command line: -Darg=value -->
+
+
+<!-- Camera and Rendering Parameters -->
+
+	<integrator type="path" id="elm__0" name="elm__0">
+		<integer name="max_depth" value="12"/>
+	</integrator>
+
+<!-- Materials -->
+
+	<bsdf type="diffuse" id="mat-itu_marble" name="mat-itu_marble">
+		<rgb value="0.900000 0.900000 0.900000" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-itu_concrete" name="mat-itu_concrete">
+		<rgb value="0.500000 0.500000 0.500000" name="reflectance"/>
+	</bsdf>
+
+<!-- Emitters -->
+
+
+<!-- Shapes -->
+
+	<shape type="ply" id="mesh-AJ-itu_marble" name="mesh-AJ-itu_marble">
+		<string name="filename" value="meshes/AJ-itu_marble.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-AJ-itu_concrete" name="mesh-AJ-itu_concrete">
+		<string name="filename" value="meshes/AJ-itu_concrete.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-A-itu_marble" name="mesh-A-itu_marble">
+		<string name="filename" value="meshes/A-itu_marble.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-A-itu_concrete" name="mesh-A-itu_concrete">
+		<string name="filename" value="meshes/A-itu_concrete.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-B-itu_marble" name="mesh-B-itu_marble">
+		<string name="filename" value="meshes/B-itu_marble.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-B-itu_concrete" name="mesh-B-itu_concrete">
+		<string name="filename" value="meshes/B-itu_concrete.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-BJ-itu_marble" name="mesh-BJ-itu_marble">
+		<string name="filename" value="meshes/BJ-itu_marble.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-BJ-itu_concrete" name="mesh-BJ-itu_concrete">
+		<string name="filename" value="meshes/BJ-itu_concrete.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-C-itu_marble" name="mesh-C-itu_marble">
+		<string name="filename" value="meshes/C-itu_marble.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-C-itu_concrete" name="mesh-C-itu_concrete">
+		<string name="filename" value="meshes/C-itu_concrete.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-CJ-itu_marble" name="mesh-CJ-itu_marble">
+		<string name="filename" value="meshes/CJ-itu_marble.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-CJ-itu_concrete" name="mesh-CJ-itu_concrete">
+		<string name="filename" value="meshes/CJ-itu_concrete.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-D-itu_marble" name="mesh-D-itu_marble">
+		<string name="filename" value="meshes/D-itu_marble.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-D-itu_concrete" name="mesh-D-itu_concrete">
+		<string name="filename" value="meshes/D-itu_concrete.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-DJ-itu_marble" name="mesh-DJ-itu_marble">
+		<string name="filename" value="meshes/DJ-itu_marble.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-DJ-itu_concrete" name="mesh-DJ-itu_concrete">
+		<string name="filename" value="meshes/DJ-itu_concrete.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-HE-itu_marble" name="mesh-HE-itu_marble">
+		<string name="filename" value="meshes/HE-itu_marble.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-HE-itu_concrete" name="mesh-HE-itu_concrete">
+		<string name="filename" value="meshes/HE-itu_concrete.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-element-itu_marble" name="mesh-element-itu_marble">
+		<string name="filename" value="meshes/element-itu_marble.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-element-itu_concrete" name="mesh-element-itu_concrete">
+		<string name="filename" value="meshes/element-itu_concrete.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-DianHau-itu_marble" name="mesh-DianHau-itu_marble">
+		<string name="filename" value="meshes/DianHau-itu_marble.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-DianHau-itu_concrete" name="mesh-DianHau-itu_concrete">
+		<string name="filename" value="meshes/DianHau-itu_concrete.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-J-itu_marble" name="mesh-J-itu_marble">
+		<string name="filename" value="meshes/J-itu_marble.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-J-itu_concrete" name="mesh-J-itu_concrete">
+		<string name="filename" value="meshes/J-itu_concrete.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-HD-itu_marble" name="mesh-HD-itu_marble">
+		<string name="filename" value="meshes/HD-itu_marble.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-HD-itu_concrete" name="mesh-HD-itu_concrete">
+		<string name="filename" value="meshes/HD-itu_concrete.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-HC-itu_marble" name="mesh-HC-itu_marble">
+		<string name="filename" value="meshes/HC-itu_marble.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-HC-itu_concrete" name="mesh-HC-itu_concrete">
+		<string name="filename" value="meshes/HC-itu_concrete.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-XingZeng-itu_marble" name="mesh-XingZeng-itu_marble">
+		<string name="filename" value="meshes/XingZeng-itu_marble.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-XingZeng-itu_concrete" name="mesh-XingZeng-itu_concrete">
+		<string name="filename" value="meshes/XingZeng-itu_concrete.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-meishu-itu_concrete" name="mesh-meishu-itu_concrete">
+		<string name="filename" value="meshes/meishu-itu_concrete.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-meishu-itu_marble" name="mesh-meishu-itu_marble">
+		<string name="filename" value="meshes/meishu-itu_marble.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_marble" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Plane" name="mesh-Plane">
+		<string name="filename" value="meshes/Plane.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+
+<!-- Volumes -->
+
+</scene>

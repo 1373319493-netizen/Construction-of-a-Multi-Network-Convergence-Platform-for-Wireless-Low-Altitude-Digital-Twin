@@ -1,0 +1,298 @@
+module powerflow {
+     solver_method NR;
+     NR_iteration_limit 50;
+};
+
+
+clock {
+     timezone PST+8PDT;
+     starttime '2023-05-01 00:00:00';
+     stoptime '2023-05-01 23:00:01';
+}
+
+module tape;
+module climate;
+module residential{
+	implicit_enduses NONE;
+};
+module generators;
+
+#include "/home/estar/cosin-env/share/WA-Yakima.tmy2";
+
+object climate {
+	name "Spokane WA";
+	tmyfile "/home/estar/cosin-env/share/WA-Yakima.tmy2";
+	interpolate LINEAR;
+}
+
+//Configurations
+object line_configuration {     
+      name line_configuration_1;     
+      conductor_A overhead_line_conductor_1;     
+      conductor_B overhead_line_conductor_1;     
+      conductor_C overhead_line_conductor_1;     
+      conductor_N overhead_line_conductor_1;     
+      spacing line_spacing_1;     
+} 
+object line_configuration {     
+      name line_configuration_2;     
+      conductor_A underground_line_conductor_1;     
+      conductor_B underground_line_conductor_1;     
+      conductor_C underground_line_conductor_1;     
+      conductor_N underground_line_conductor_1;     
+      spacing line_spacing_2;     
+} 
+object line_spacing {     
+      name line_spacing_1;     
+      distance_AB 57.6 in;    
+      distance_BC 57.6 in;    
+      distance_AC 57.6 in;    
+      distance_AN 51.6 in;    
+      distance_BN 51.6 in;    
+      distance_CN 51.6 in;    
+}  
+object line_spacing {     
+      name line_spacing_2;     
+      distance_AB 24 in;    
+      distance_BC 24 in;    
+      distance_AC 48 in;    
+      distance_AN 60 in;    
+      distance_BN 48 in;    
+      distance_CN 24 in;    
+} 
+object overhead_line_conductor {     
+      name overhead_line_conductor_1;      
+      rating.summer.continuous 256.0;     
+      geometric_mean_radius 0.01200 ft;    
+      resistance 0.1;     
+}  
+object underground_line_conductor {     
+    name underground_line_conductor_1;      
+	outer_diameter 2.20;
+	conductor_gmr 0.04;
+	conductor_diameter 1.2500;
+	conductor_resistance 0.109;
+	neutral_gmr 0.005;
+	neutral_resistance 9.6;
+	neutral_diameter 0.19;
+	neutral_strands 20;
+	shield_gmr 0;
+	shield_resistance 0;    
+} 
+
+object overhead_line_conductor {     
+      name overhead_line_conductor_2;      
+      rating.summer.continuous 150.0;     
+      geometric_mean_radius 0.02200 ft;    
+      resistance 0.2;     
+}
+
+object transformer_configuration {
+    	name substation_transformer_config;
+    	connect_type WYE_WYE;
+     	install_type PADMOUNT;
+     	primary_voltage 110000;
+     	secondary_voltage 10000;
+     	power_rating 5 MVA;
+     	impedance 0.00033+0.0022j;
+}
+object transformer_configuration {
+     name load_transformer;
+     connect_type SINGLE_PHASE_CENTER_TAPPED;
+     install_type PADMOUNT;
+     primary_voltage 10000 V;
+     secondary_voltage 120 V;
+     power_rating 250; //额定功率
+     powerA_rating 250;
+     impedance 0.015+0.0675j;
+}
+object triplex_line_configuration {
+      name triplex_line_config;
+      conductor_1 Name_1_0_AA_triplex;
+      conductor_2 Name_1_0_AA_triplex;
+      conductor_N Name_1_0_AA_triplex;
+      insulation_thickness 0.1;
+      diameter 0.4;
+}
+object triplex_line_conductor {
+      name Name_1_0_AA_triplex;
+      resistance 0.57;
+      geometric_mean_radius 0.0111;
+}
+
+
+//Feeder head
+object node {
+	name feeder_head;
+	bustype SWING;
+	phases ABCN;
+        nominal_voltage 110000;
+}
+object transformer {
+     name substation_transformer;
+     from feeder_head;
+     to substation_meter;
+     phases ABCN;
+     configuration substation_transformer_config;
+}
+
+object meter {     
+      name substation_meter;     
+      phases ABCN;     
+      nominal_voltage 10000;         
+} 
+
+//enb1:solar battery
+object overhead_line {     
+      name branch_1_line_1;     
+      phases ABCN;     
+      from substation_meter;     
+      to branch_1_meter_1;     
+      length 10000;     
+      configuration line_configuration_1;     
+} 
+object meter {     
+      name branch_1_meter_1; 
+      groupid branch_1_meter;    
+      phases ABCN;     
+      nominal_voltage 10000;     
+}
+
+// Branch 1 house 1 
+object transformer {
+     name b1m1_house_trans;
+     phases AS;
+     from branch_1_meter_1;
+     to b1m1_house_node;
+     configuration load_transformer;
+}
+object triplex_meter {     
+     name b1m1_house_node;
+     phases AS;
+     nominal_voltage 120.00;     
+} 
+object triplex_line {
+     name b1m1_tl;
+     from b1m1_house_node;
+     to b1m1_house_meter;
+     phases AS;
+     length 10;
+     configuration triplex_line_config;
+}
+
+object triplex_meter {     
+     name b1m1_house_meter;
+     phases AS;
+     nominal_voltage 120.00;     
+} 
+
+object house {
+     name b1m1_house;
+     parent b1m1_house_meter;
+     floor_area 1040;
+     air_temperature 72.5;
+}
+
+object ZIPload {
+     name enb1;
+     base_power 0.83702;
+     parent b1m1_house;
+     power_pf 0.97;
+     power_fraction 1.000000;
+     impedance_fraction 0.000000;
+     current_fraction 0.000000;
+}
+
+
+object triplex_line {
+     name b1m1_tl_batt;
+     from b1m1_house_node;
+     to b1m1_batt_meter;
+     phases AS;
+     length 10;
+     configuration triplex_line_config;
+}
+object triplex_meter {     
+     name b1m1_batt_meter;
+     phases AS;
+     nominal_voltage 120.00;     
+} 
+object inverter {
+      name b1m1_batt_inv;
+      generator_status ONLINE;
+      inverter_type FOUR_QUADRANT;
+      four_quadrant_control_mode LOAD_FOLLOWING;
+      parent b1m1_batt_meter;
+      sense_object b1m1_house_node;
+      rated_power 1000;		//Per phase rating
+      inverter_efficiency .95;
+	  charge_on_threshold 0;
+	  charge_off_threshold 0.2;
+	  discharge_off_threshold 4;
+	  discharge_on_threshold 6;
+	  max_discharge_rate 250;
+	  max_charge_rate 250;
+	  charge_lockout_time 1;
+	  discharge_lockout_time 1;
+}
+object battery {
+	name b1m1_batt;
+	parent b1m1_batt_inv;
+	use_internal_battery_model TRUE;
+	battery_type LI_ION;
+	rated_power 90;
+	nominal_voltage 120;
+	battery_capacity 7.5;
+	round_trip_efficiency 0.81;
+	state_of_charge 0;
+	generator_mode SUPPLY_DRIVEN;
+}
+
+object triplex_line {
+     name b1m1_tl_solar;
+     from b1m1_house_node;
+     to b1m1_solar_meter;
+     phases AS;
+     length 10;
+     configuration triplex_line_config;
+}
+object triplex_meter {     
+     name b1m1_solar_meter;
+     phases AS;
+     nominal_voltage 120.00;     
+} 
+object inverter {
+	name b1m1_solar_inv;
+	phases AS;
+	parent b1m1_solar_meter;
+	generator_status ONLINE;
+	inverter_type FOUR_QUADRANT;
+    four_quadrant_control_mode CONSTANT_PF;
+    generator_mode SUPPLY_DRIVEN;
+    inverter_efficiency .95;
+	rated_power 10000;
+}
+object solar {
+	name b1m1_solar;
+	parent b1m1_solar_inv;
+	panel_type SINGLE_CRYSTAL_SILICON;
+	area 203.99 ft^2;
+	tilt_angle 47.0;
+	efficiency 0.135;
+	orientation_azimuth 180; //equator-facing (South)
+	orientation FIXED_AXIS;
+	SOLAR_TILT_MODEL SOLPOS;
+	SOLAR_POWER_MODEL FLATPLATE;
+}
+
+//Recorders
+
+
+object multi_recorder{
+	name b1m1_house_data;
+	file gain3_energy.csv;
+	interval 1;
+	property  b1m1_house_node:measured_real_power, b1m1_solar_inv:VA_Out.real, b1m1_house_meter:measured_real_power, b1m1_batt_meter:measured_real_power, b1m1_batt:state_of_charge;
+}
+
+
